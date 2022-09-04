@@ -76,7 +76,6 @@ class MainActivity : BaseActivity(), (DFeatures) -> Unit {
         }
     }
 
-
     private fun setBikeStationAdapter(bikeStationList: MutableList<DFeatures>?) {
         binding.rvBikeStation.adapter =
             BikeStationAdapter(
@@ -104,6 +103,7 @@ class MainActivity : BaseActivity(), (DFeatures) -> Unit {
         val intent = Intent(this, DetailsViewerActivity::class.java)
         intent.putExtra(IntentParcelable.LATITUDE, mLatitude)
         intent.putExtra(IntentParcelable.LONGITUDE, mLongitude)
+        intent.putExtra(IntentParcelable.BIKE_STATION_DETAILS, bikeStation)
         startActivity(intent)
     }
 

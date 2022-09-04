@@ -118,4 +118,6 @@ class GoogleMapManager(context: Context) : OnMapReadyCallback {
         }
         mGoogleMap.addMarker(markerOptions)
     }
+
+
 }

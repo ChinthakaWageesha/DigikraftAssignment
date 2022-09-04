@@ -19,7 +19,7 @@ object RequestCode {
 }
 
 object IntentParcelable {
-    const val MAP_DETAILS = "map_details"
+    const val BIKE_STATION_DETAILS = "bike_station_details"
     const val LATITUDE = "latitude"
     const val LONGITUDE = "longitude"
 }
