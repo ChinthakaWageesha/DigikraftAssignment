@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorBlack">#FF000000</color>
+    <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFFFF</color>
     <color name="colorTransparent">#00FFFFFF</color>
 
@@ -8,8 +8,8 @@
 
     <color name="colorPrimary">@color/colorBlack</color>
     <color name="colorSecondary">@color/colorBlack</color>
-    <color name="colorAppBackground">@color/colorWhite</color>
-    <color name="colorTextPrimary">@color/colorBlack</color>
-    <color name="colorTextSecondary">@color/colorWhite</color>
+    <color name="colorAppBackground">@color/colorBlack</color>
+    <color name="colorTextPrimary">@color/colorWhite</color>
+    <color name="colorTextSecondary">@color/colorBlack</color>
 
 </resources>
