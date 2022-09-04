@@ -14,6 +14,12 @@ object Msg {
     const val INTERNET_ISSUE = "Sorry, Seems your internet connection is not available. Check & try again."
 }
 
+object RequestCode {
+    const val LOCATION_REQUEST_CODE = 199
+}
+
 object IntentParcelable {
     const val MAP_DETAILS = "map_details"
+    const val LATITUDE = "latitude"
+    const val LONGITUDE = "longitude"
 }

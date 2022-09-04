@@ -9,8 +9,6 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.digikraftassignment.R
-import com.example.digikraftassignment.core.extension.showToast
-import com.example.digikraftassignment.core.general.GoTo
 
 class BikeStationAdapter(
     private val context: Context,
