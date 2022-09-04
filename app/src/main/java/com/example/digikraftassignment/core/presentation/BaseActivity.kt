@@ -11,7 +11,7 @@ import com.example.digikraftassignment.core.util.Msg
 import com.example.digikraftassignment.network.SupportInterceptor
 import org.koin.android.ext.android.inject
 
-class BaseActivity: AppCompatActivity() {
+abstract class BaseActivity: AppCompatActivity() {
 
     private var progress: Dialog? = null
     private val mNetworkInterceptor by inject<SupportInterceptor>()

@@ -4,7 +4,7 @@ import android.content.Intent
 
 object MainNavigation: DynamicFeature<Intent> {
 
-    private const val MAIN = "com.example.digikraftassignment.app.presentation.MainActivity"
+    private const val MAIN = "com.example.digikraftassignment.app.presentation.main.MainActivity"
 
     override val dynamicStart: Intent?
         get() = MAIN.loadIntent()

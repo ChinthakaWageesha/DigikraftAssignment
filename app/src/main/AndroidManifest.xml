@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DigikraftAssignment">
         <activity
+            android:name=".app.presentation.detail_viewer.DetailsViewerActivity"
+            android:exported="true" />
+        <activity
             android:name=".core.presentation.CoreActivity"
             android:exported="true"
             android:theme="@style/Theme.DigikraftAssignment.Splash">
@@ -22,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.presentation.MainActivity"
+            android:name=".app.presentation.main.MainActivity"
             android:exported="true" />
     </application>
 

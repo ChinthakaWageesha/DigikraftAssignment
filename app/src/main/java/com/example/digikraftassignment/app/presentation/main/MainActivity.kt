@@ -1,13 +1,13 @@
-package com.example.digikraftassignment.app.presentation
+package com.example.digikraftassignment.app.presentation.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.digikraftassignment.R
 import com.example.digikraftassignment.app.dependencyinjection.injectFeature
+import com.example.digikraftassignment.core.general.GoTo
+import com.example.digikraftassignment.core.presentation.BaseActivity
 import com.example.digikraftassignment.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity(), (String) -> Unit {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -20,8 +20,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setBikeStationAdapter() {
-        binding.rvBikeStation.adapter = BikeStationAdapter(applicationContext)
+        binding.rvBikeStation.adapter = BikeStationAdapter(applicationContext, this)
         binding.rvBikeStation.layoutManager = LinearLayoutManager(applicationContext)
+    }
+
+    override fun invoke(p1: String) {
+        GoTo.detailsViewer(this)
     }
 
 }

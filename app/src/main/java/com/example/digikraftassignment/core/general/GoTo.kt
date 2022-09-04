@@ -2,13 +2,13 @@ package com.example.digikraftassignment.core.general
 
 import android.content.Context
 import android.content.Intent
-import com.example.digikraftassignment.app.presentation.MainActivity
+import com.example.digikraftassignment.app.presentation.detail_viewer.DetailsViewerActivity
 
 object GoTo {
 
-    fun main(context: Context) {
+    fun detailsViewer(context: Context) {
         context.startActivity(
-            Intent(context, MainActivity::class.java)
+            Intent(context, DetailsViewerActivity::class.java)
         )
     }
 

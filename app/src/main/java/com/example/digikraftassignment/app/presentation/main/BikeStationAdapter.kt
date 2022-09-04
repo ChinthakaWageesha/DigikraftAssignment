@@ -1,4 +1,4 @@
-package com.example.digikraftassignment.app.presentation
+package com.example.digikraftassignment.app.presentation.main
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,9 +10,11 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.digikraftassignment.R
 import com.example.digikraftassignment.core.extension.showToast
+import com.example.digikraftassignment.core.general.GoTo
 
 class BikeStationAdapter(
-    private val context: Context
+    private val context: Context,
+    private val onClickItem: (String) -> Unit
 ) : RecyclerView.Adapter<BikeStationAdapter.BikeStationViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BikeStationViewHolder {
@@ -45,7 +47,7 @@ class BikeStationAdapter(
             txtAvailableBikes.text = "7"
             txtAvailablePlaces.text = "21"
 
-            clStationBase.setOnClickListener { "Clicked".showToast(context) }
+            clStationBase.setOnClickListener { onClickItem("Click") }
 
         }
     }
