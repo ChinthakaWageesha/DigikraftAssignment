@@ -1,7 +1,8 @@
-package com.example.digikraftassignment.app.presentation.main
+package com.example.digikraftassignment.app.presentation.main.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.location.Location
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,14 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.digikraftassignment.R
+import com.example.digikraftassignment.app.domain.model.DFeatures
+import com.google.android.gms.maps.model.LatLng
 
 class BikeStationAdapter(
     private val context: Context,
-    private val onClickItem: (String) -> Unit
+    private val currentLatLng: LatLng,
+    private val bikeStationsList: MutableList<DFeatures>?,
+    private val onClickItem: (DFeatures) -> Unit
 ) : RecyclerView.Adapter<BikeStationAdapter.BikeStationViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BikeStationViewHolder {
@@ -25,7 +30,7 @@ class BikeStationAdapter(
         onBind(position)
     }
 
-    override fun getItemCount(): Int = 10
+    override fun getItemCount(): Int = bikeStationsList?.size ?: 0
 
     inner class BikeStationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -39,14 +44,29 @@ class BikeStationAdapter(
         @SuppressLint("SetTextI18n")
         fun onBind(position: Int) {
 
-            txtStationName.text = "15589 Ofiar Dabia"
-            txtDistance.text = "800m"
+            val bikeStation = bikeStationsList?.get(position)!!
+
+            txtStationName.text =
+                bikeStation.id.toString().plus(" ${bikeStation.bikeStationProperties?.lable}")
+            txtDistance.text = getDistance(bikeStation).toString().plus("m")
             txtBikeStation.text = context.getString(R.string.label_bike_station)
-            txtAvailableBikes.text = "7"
-            txtAvailablePlaces.text = "21"
+            txtAvailableBikes.text = bikeStation.bikeStationProperties?.bikes
+            txtAvailablePlaces.text = bikeStation.bikeStationProperties?.freeRacks
 
-            clStationBase.setOnClickListener { onClickItem("Click") }
+            clStationBase.setOnClickListener { onClickItem(bikeStation) }
 
+        }
+
+        private fun getDistance(bikeStation: DFeatures) : Float {
+            val startPoint = Location("userLocation")
+            startPoint.latitude = currentLatLng.latitude
+            startPoint.longitude = currentLatLng.longitude
+
+            val endPoint = Location("bikeStationLocation")
+            endPoint.latitude = bikeStation.geometry?.coordinates?.get(0)!!
+            endPoint.longitude = bikeStation.geometry?.coordinates?.get(1)!!
+
+            return startPoint.distanceTo(endPoint)
         }
     }
 }

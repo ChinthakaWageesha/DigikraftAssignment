@@ -4,7 +4,9 @@ import com.example.digikraftassignment.app.data.datasource.BikeStationDataSource
 import com.example.digikraftassignment.app.data.repository.BikeStationRepositoryImpl
 import com.example.digikraftassignment.app.domain.repository.BikeStationRepository
 import com.example.digikraftassignment.app.domain.usecase.BikeStationUseCase
+import com.example.digikraftassignment.app.presentation.main.MainViewModel
 import com.example.digikraftassignment.app.remotedatasource.BikeStationRemoteDataSourceImpl
+import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -23,7 +25,11 @@ private val loadFeature by lazy {
 }
 
 val viewModelModule: Module = module {
-
+    viewModel {
+        MainViewModel(
+            bikeStationUseCase = get()
+        )
+    }
 }
 
 val useCaseModule: Module = module(override = true) {

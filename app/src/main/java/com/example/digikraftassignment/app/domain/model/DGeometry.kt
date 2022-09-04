@@ -5,6 +5,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class DGeometry(
-    var coordinates: ArrayList<Double>? = null,
+    var coordinates: List<Double>? = null,
     var type: String? = null
 ): Parcelable

@@ -2,6 +2,7 @@ package com.example.digikraftassignment.core.presentation
 
 import android.app.Dialog
 import android.content.Intent
+import android.os.Bundle
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import com.example.digikraftassignment.R
@@ -15,6 +16,12 @@ abstract class BaseActivity: AppCompatActivity() {
 
     private var progress: Dialog? = null
     private val mNetworkInterceptor by inject<SupportInterceptor>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setProgressLoader()
+        setNetworkInterceptor()
+    }
 
     private fun setProgressLoader() {
         progress = Dialog(this, R.style.ProgressbarStyle).apply {
