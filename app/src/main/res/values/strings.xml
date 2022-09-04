@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DigikraftAssignment</string>
+
+    <string name="label_available_bikes">Available bikes</string>
+    <string name="label_available_places">Available places</string>
+    <string name="label_bike_station">- Bike Station</string>
 </resources>

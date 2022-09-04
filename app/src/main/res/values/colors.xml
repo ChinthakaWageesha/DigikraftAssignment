@@ -2,6 +2,9 @@
 <resources>
     <color name="colorBlack">#FF000000</color>
     <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorGray">#808088</color>
+    <color name="colorGreen">#31ECA0</color>
+    <color name="colorRedSalsa">#FF6D74</color>
     <color name="colorTransparent">#00FFFFFF</color>
 
     <!--Colors matches to dark mode-->
@@ -10,6 +13,7 @@
     <color name="colorSecondary">@color/colorBlack</color>
     <color name="colorAppBackground">@color/colorWhite</color>
     <color name="colorTextPrimary">@color/colorBlack</color>
-    <color name="colorTextSecondary">@color/colorWhite</color>
+    <color name="colorTextSecondary">@color/colorGray</color>
+    <color name="colorTextTertiary">@color/colorGreen</color>
 
 </resources>

@@ -49,4 +49,64 @@
         <item name="android:topBright">@color/colorTransparent</item>
         <item name="android:topDark">@color/colorTransparent</item>
     </style>
+
+    <!--Primary Text style-->
+    <style name="PrimaryRegularText" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="PrimaryBoldText" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="PrimaryRegularText.Size14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="PrimaryBoldText.Size22">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="PrimaryBoldText.Size40">
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <!--Secondary Text style-->
+    <style name="SecondaryRegularText" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+    <style name="SecondaryRegularText.Size14">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--Tertiary Text style-->
+    <style name="TertiaryBoldText" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/colorTextTertiary</item>
+    </style>
+
+    <style name="TertiaryBoldText.Size40">
+        <item name="android:textSize">40sp</item>
+    </style>
+
 </resources>
